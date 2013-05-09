@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block extrahead%}
+<link href="/static/style.css" rel="stylesheet" type="
+	text/css" />
+{%endblock%}
+{%block content%}
+
+<div id="navheader">
+            		
+	           		
+					<ul class="navigation">
+						<li><a href="/">Home</a></li>
+						<li><a href="/news">News</a></li>
+						
+						<li><a href="/accounts/register">Register</a></li>
+						<li><a href="/accounts/login">Login</a></li>
+					</ul>
+			</div>
+<br/><br/><br/>
+
+Hello members of SASSRA. Please vote as requested in the last <a  href="/newsletter">newsletter</a> on the following 2 polls at the link below: <br/>
+
+<a href="{% url polls:index %}">Vote</a>
+<br/>
+
+The site is brand new and has been rigged. Its going through a styling phase now. As with the previous site, all riggers and stunt performers will have profiles. But please note that this time your profile details WILL NOT BE PUBLIC. Boardmembers, coordinators etc will have access to it. Things like contact details will be shared between fellow members though.
+
+<br/>
+Thanks guys,
+Julian
+
+
+{% endblock %}

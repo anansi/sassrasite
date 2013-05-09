@@ -1,0 +1,16 @@
+$(document).ready(function(){
+	$("#trigger").click(function(){
+		$("#login_box").slideToggle(200);
+		$("#form_login").css('display','block');
+		$("#form_reg").css('display','none');
+		$("#login_1st").focus();
+		});	
+	});
+$(document).ready(function(){
+	$("#reg_btn").click(function(){
+		$("#login_box").slideToggle(200);
+		$("#form_login").css('display','none');
+		$("#form_reg").css('display','block');
+		$("#Reg_1st").focus();
+		});	
+	});

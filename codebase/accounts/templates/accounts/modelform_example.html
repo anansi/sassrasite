@@ -1,0 +1,24 @@
+
+{% load cropping %}
+{% block extra_head %}
+  {{ form.media }}
+{% endblock %}
+{% block content %}
+
+  <form method="post" id="cropping_form" action="." enctype="multipart/form-data">{% csrf_token %}
+    <input name="image" type="file" id="id_image" />
+    {% for field in form %}
+    ;
+        {{ field.label_tag }}: {{ field }}
+    {% endfor %}
+    <input type="submit" value="Save"/>
+  </form>
+  
+  {% if up %}
+    <br />
+    <h4>Preview</h4>
+      <img src="{% cropped_thumbnail up cropping %}" />
+  {% endif %}
+
+{% endblock %}
+

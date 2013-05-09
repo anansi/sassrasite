@@ -1,0 +1,10 @@
+{% load thumbnail %}
+{% load cropping %}
+{% load staticfiles %}
+<img src="{% static "my_app/myexample.jpg" %}" alt="My image"/>
+
+:
+{% thumbnail picture 430x360  %}
+:
+
+<img src="{% cropped_thumbnail image cropping scale=0.5 %}">

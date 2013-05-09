@@ -1,0 +1,106 @@
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<a href="/">home<a/>
+  <h1>Create an account</h1>
+
+<form enctype="multipart/form-data" action="" method="post" id="sassrauser_form">
+
+{% csrf_token %}
+{{ form.non_field_errors }}
+<div>
+
+  <fieldset class="module aligned ">
+    
+    <h2>Sign Up details</h2>
+    
+        <div class="form-row field-email">
+            
+            
+                <div>
+                    
+                    {{ form.email.errors }}
+        
+                        <label for="id_email" class="required">Email address:</label>
+                        
+                            <input class="vTextField" id="id_email" maxlength="75" name="email" type="text" value="" />
+                        
+                </div>
+            
+        </div>
+
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_first_name" class="required">first name:</label>
+                        
+                            <input class="vTextField" id="id_first_name" maxlength="10" name="first_name" type="text" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+    <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_last_name" class="required">last name:</label>
+                        
+                            <input class="vTextField" id="id_last_name" maxlength="10" name="last_name" type="text" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-password">
+            
+            
+                <div>
+                    
+                    {{ form.password1.errors }}
+                        <label for="id_password1" class="required">Password:</label>
+                        
+                            <input id="id_password1" name="password1" type="password" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-password">
+            
+            
+                <div>
+                    
+                    {{ form.password2.errors }}
+                        <label for="id_password2" class="required">Confirm Password:</label>
+                        
+                            <input id="id_password2" name="password2" type="password" />
+                    
+                </div>
+            
+        </div>
+
+        
+    
+</fieldset>
+
+
+<div class="submit-row">
+<input type="submit" value="Sign Up" class="default" name="_save" />
+
+</div>
+
+</div>
+</form>

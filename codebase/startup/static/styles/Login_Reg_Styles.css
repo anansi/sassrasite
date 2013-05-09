@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+#login_container {
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:0;
+	z-index:9999;
+}
+#login_box {
+	width:100%;
+	height:auto;
+	padding:5px 0 5px 0;
+	background:#1E1E1E;
+	display:none;
+}
+#form_login {
+	padding:10px 0 0 0;
+	float:right;
+	width:480px;
+	height:auto;
+	display:none;
+}
+#form_login ul {
+	margin:0;
+	padding:0 10px;
+	list-style:none;
+	float:right;
+}
+#form_login li {
+	display:inline;
+	margin:5px 0 0 10px;
+	text-transform:capitalize;
+}
+#form_login a {
+	color:#33CCCC;
+}
+#form_login a:hover {
+	color:#FFFFFF;
+}
+#form_reg {
+	padding:0;
+	width:500px;
+	float:right;
+	height:auto;
+	text-transform:capitalize;
+	display:none;
+}
+#form_reg table {
+	padding:0;
+	margin:0;
+	border:none;
+}
+#form_reg td {
+	border:none;
+	padding:2px;
+}
+#form_reg a {
+	color:#33CCCC;
+}
+#form_reg a:hover {
+	color:#FFFFFF;
+}
+#login_box_sub {
+	width:100%;
+	height:auto;
+	background-color:transparent;
+	float:right;
+	padding:0;
+	margin-bottom:30px;
+}
+#login_box_sub ul {
+	margin:0;
+	padding:5px 10px 5px 5px;
+	float:right;
+	text-transform:capitalize;
+	border-radius:0 0 20px 20px;
+	border:1px solid #1E1E1E;
+	background-color:#333;
+	color:#FFF;
+}
+#login_box_sub li {
+	display:inline;
+	margin-right:10px;
+	margin-left:10px;
+	color:#CCC;
+}
+#login_box_sub a {
+	color:#33CCCC;
+}
+#login_box_sub a:hover {
+	color:#FFF;
+}

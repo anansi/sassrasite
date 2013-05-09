@@ -1,0 +1,423 @@
+{% extends "base.html" %}
+
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="{% url 'home' %}">Home</a></div>
+{% endblock %}
+
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<form enctype="multipart/form-data" action="" method="post" id="sassrauser_form">
+
+{% csrf_token %}
+{{ form.non_field_errors }}
+<div>
+
+  <fieldset class="module aligned ">
+    
+    <h2>Personal Details</h2>
+    
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.email.errors }}
+                        <label for="id_first_name" class="required">Email:</label>
+                        
+                            <input class="vTextField" id="id_email" maxlength="10" name="email" type="text" value="{{ user.email }}" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.first_name.errors }}
+                        <label for="id_first_name" class="required">first name:</label>
+                        
+                            <input class="vTextField" id="id_first_name" maxlength="10" name="first_name" type="text" value="{{ user.first_name }}" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+    <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.last_name.errors }}
+                        <label for="id_last_name" class="required">last name:</label>
+                        
+                            <input class="vTextField" id="id_last_name" maxlength="10" name="last_name" type="text" value="{{ user.last_name }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+
+<div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.mobile.errors }}
+                        <label for="id_mobile" class="required">Mobile No:</label>
+                        
+                            <input class="vTextField" id="id_mobile" maxlength="10" name="mobile" type="text"  value="{{ user.mobile }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+<div class="form-row field-mobile2">
+            
+            
+                <div>
+                    {{ form.date_of_birth.errors }}
+                    
+                        <label for="id_date_of_birth" class="required">Date of Birth:</label>
+                        
+                            <input class="vTextField" style="width:200px" id="id_date_of_birth" name="date_of_birth" size="10" type="text" value="{{ user.date_of_birth }}" />
+
+                            'YYYY-MM-DD'
+                    
+                </div>
+            
+        </div>
+        
+        
+
+        
+    
+</fieldset>
+
+
+<div>
+
+  <fieldset class="module aligned ">
+    
+    <h2>Measurements</h2>
+    
+        <div class="form-row field-email">
+            
+            
+                <div>
+                    
+                    {{ form.height.errors }}
+        
+                        <label for="id_date_of_birth" class="required">Height (cm):</label>
+                        
+                            <input class="vTextField" id="id_height" maxlength="75" name="height" type="text" value="{{ user.height }}" />
+                        
+                </div>
+            
+        </div>
+
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.eye_colour.errors }}
+                        <label for="id_first_name" class="required">Eye Colour:</label>
+                        
+                            <input class="vTextField" id="id_eye_colour" maxlength="10" name="eye_colour" type="text" value="{{ user.eye_colour }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+    <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.hair_colour.errors }}
+                        <label for="id_mobile" class="required">Hair Colour:</label>
+                        
+                            <input class="vTextField" id="id_hair_colour" maxlength="10" name="hair_colour" type="text"  value="{{ user.hair_colour }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.neck.errors }}
+                        <label for="id_neck" class="required">Neck (cm):</label>
+                        
+                            <input class="vTextField" id="id_neck" maxlength="10" name="neck" type="text"  value="{{ user.neck }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.weight.errors }}
+                        <label for="id_weight" class="required">Weight (kg):</label>
+                        
+                            <input class="vTextField" id="id_weight" maxlength="10" name="weight" type="text"  value="{{ user.weight }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.shoe_size.errors }}
+                        <label for="id_shoe_size" class="required">Shoe Size:</label>
+                        
+                            <input class="vTextField" id="id_shoe_size" maxlength="10" name="shoe_size" type="text"  value="{{ user.shoe_size }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.chest.errors }}
+                        <label for="id_shoe_size" class="required">Chest (cm):</label>
+                        
+                            <input class="vTextField" id="id_chest" maxlength="10" name="chest" type="text"  value="{{ user.chest }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        
+         <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.bust.errors }}
+                        <label for="id_bust" class="required">Bust (cm):</label>
+                        
+                            <input class="vTextField" id="id_bust" maxlength="10" name="bust" type="text"  value="{{ user.bust }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.arm.errors }}
+                        <label for="id_shoe_size" class="required">Arm (cm):</label>
+                        
+                            <input class="vTextField" id="id_arm" maxlength="10" name="arm" type="text"  value="{{ user.arm }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.head.errors }}
+                        <label for="id_shoe_size" class="required">Head (cm):</label>
+                        
+                            <input class="vTextField" id="id_head" maxlength="10" name="head" type="text"  value="{{ user.head }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.back.errors }}
+                        <label for="id_back" class="required">Back (cm):</label>
+                        
+                            <input class="vTextField" id="id_head" maxlength="10" name="back" type="text"  value="{{ user.back }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    {{ form.waist.errors }}
+                    
+                        <label for="id_waist" class="required">Waist (cm):</label>
+                        
+                            <input class="vTextField" id="id_waist" maxlength="10" name="waist" type="text"  value="{{ user.waist }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.inner_leg.errors }}
+                        <label for="id_inner_leg" class="required">Inner Leg (cm):</label>
+                        
+                            <input class="vTextField" id="id_inner_leg" maxlength="10" name="inner_leg" type="text"  value="{{ user.inner_leg }}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+
+         <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.outer_leg.errors }}
+                        <label for="id_outer_leg" class="required">Outer Leg (cm):</label>
+                        
+                            <input class="vTextField" id="id_outer_leg" maxlength="10" name="outer_leg" type="text"  value="{{ user.outer_leg}}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.wrist.errors }}
+                        <label for="id_outer_leg" class="required">Wrist (cm):</label>
+                        
+                            <input class="vTextField" id="id_wrist" maxlength="10" name="wrist" type="text"  value="{{ user.wrist}}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+
+         
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    {{ form.bicep.errors }}
+                    
+                        <label for="id_bicep" class="required">Bicep (cm):</label>
+                        
+                            <input class="vTextField" id="id_bicep" maxlength="10" name="bicep" type="text"  value="{{ user.bicep}}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.hips.errors }}
+                        <label for="id_hips" class="required">Hips (cm):</label>
+                        
+                            <input class="vTextField" id="id_hips" maxlength="10" name="hips" type="text"  value="{{ user.hips}}"/>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        <div class="form-row field-mobile2">
+            
+            
+                <div>
+                    
+                    {{ form.ethnicity.errors }}
+                        <label for="id_hips" class="required">Ethnicity:</label>
+                        <div>
+            <select name='ethnicity' id='ethnicity' value='ethnicity' form='sassrauser_form'> <option>White</option><option> Coloured</option><option>Indian </option><option>Black </option><option>Asian </option></select>
+        </div>
+                            
+                        
+                    
+                    
+                </div>
+            
+        </div>
+        
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Update Profile" class="default" name="_save" />
+
+</div>
+
+
+
+
+
+
+
+</div>
+</form>
+{% endblock %}
