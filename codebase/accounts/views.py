@@ -58,6 +58,7 @@ def logout_user(request):
     return render(request, 'accounts/logged_out.html')
 
 def login(request):
+    print 'login page requested'
     return render(request, 'accounts/login.html')
 
 def viewProfile(request):

@@ -27,9 +27,9 @@ def detail(request, poll_id):
     print 'has_voted_one:'
     
     try:
-        profile = UserProfile.objects.get(userObject=user)
+        profile = UserProfile.objects.get(user=user)
     except ObjectDoesNotExist:
-        profile = UserProfile(userObject=user)
+        profile = UserProfile(user=user)
         profile.save()
         print 'created profile for user'
     
@@ -73,14 +73,10 @@ def vote(request, poll_id):
     user = request.user
     print 'poles for user:'
     
-    profile = UserProfile.objects.get(userObject=user)
-
-    
+    profile = UserProfile.objects.get(user=user)
 
     poll = get_object_or_404(Poll, pk=poll_id)
     profile.pollsVoted.add(poll)
-
-    #print type(user.polls.all())
     
     p = get_object_or_404(Poll, pk=poll_id)
     try:

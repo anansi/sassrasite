@@ -1,6 +1,8 @@
-{% extends "admin/base.html" %}
+{% extends "index.html" %}
 
-{%block content%}
+{% load static %}
+
+{% block main_section %}
 
 <h1>{{ poll.question }}</h1>
 
@@ -19,14 +21,14 @@
 
 
 
-	{% if hasAlreadyVoted  %}
-		Thanks, you have already voted on this Poll 
-		<a href="/polls/{{ poll.id }}/results">See current results</a>
-	{% else %}
-		<input type="submit" value="Vote" />	
-	{% endif %}
+  {% if hasAlreadyVoted  %}
+    Thanks, you have already voted on this Poll 
+    <a href="/polls/{{ poll.id }}/results">See current results</a>
+  {% else %}
+    <input type="submit" value="Vote" />  
+  {% endif %}
 
 
 </form>
-
 {% endblock %}
+
