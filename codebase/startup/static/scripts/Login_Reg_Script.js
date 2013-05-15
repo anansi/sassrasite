@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$("#login_box").slideToggle(200);
 		$("#form_login").css('display','block');
 		$("#form_reg").css('display','none');
-		$("#login_1st").focus();
+		$("#username").focus();
 		});	
 	});
 $(document).ready(function(){

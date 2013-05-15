@@ -2,7 +2,7 @@
 from stuntperformers.admin import UserChangeForm 
 from django.shortcuts import render, get_object_or_404,render_to_response,RequestContext
 from django.contrib.auth import authenticate, login as auth_login, logout
-from stuntperformers.admin import UserCreationForm
+from accounts.forms import UserCreateForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
@@ -11,6 +11,7 @@ from django.template import Context, loader
 from easy_thumbnails.files import get_thumbnailer
 from example.models import Image
 from accounts.forms import ImageForm
+from django.contrib.auth.forms import AuthenticationForm
 
 def thumbnail_options(request):
     print 'user is %s'%request.user.email
@@ -51,15 +52,35 @@ def cropPicture(request, image_id=None):
     return render(request, 'accounts/modelform_example.html', {'form': form, 'up': up})
 
 def profile(request):    
-    return HttpResponseRedirect(reverse('news'))
+    return HttpResponseRedirect(reverse('home'))
 
 def logout_user(request):
     logout(request)
-    return render(request, 'accounts/logged_out.html')
+    return HttpResponseRedirect(reverse('home'))
 
-def login(request):
+def login_user(request):
     print 'login page requested'
-    return render(request, 'accounts/login.html')
+    login_form = AuthenticationForm(request.POST)
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            print 'user detected therefore auth passed'
+            if user.is_active:
+                print 'user is active'
+                login(request, user)
+                # Redirect to a success page.
+            else:
+                # Return a 'disabled account' error message
+                print 'login failed disabled account'
+        else:
+            # Return an 'invalid login' error message.
+            print 'login failed invalid login'
+            login_form.is_valid()
+    return HttpResponseRedirect(reverse('home'),{'login_form': login_form})
+
+
 
 def viewProfile(request):
     userProfileI = UserProfile(user=request.user)
@@ -84,11 +105,24 @@ def viewProfile(request):
 def register(request):
     print 'register started in views.py'
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserCreateForm(request.POST)
+
 
         print 'were in post'
-        print 'email valid: '
-        print form.is_valid()
+        # print 'email valid: %s'%request.POST['email']
+        # print 'first name: %s'%request.POST['first_name']
+        # print 'last name: %s'%request.POST['last_name']
+        print 'password1 : %s'%request.POST['password1']
+        print 'password2 : %s'%request.POST['password2']
+
+        # form.first_name = request.POST['first_name']
+        # form.password1 = request.POST['password1']
+        # form.password2 = request.POST['password2']
+        # form.email = request.POST['email']
+        form.username = "asdf"
+
+        print 'form test %s'%form.username
+        #print form.is_valid()
         if form.is_valid():
             print 'form first name %s'%form.cleaned_data['first_name']
             user = User.objects.create_user(form.cleaned_data['email'], form.cleaned_data['email'],form.cleaned_data['password1'] )
@@ -111,7 +145,9 @@ def register(request):
             auth_login (request,user)
             print 'form being submitted'
             return HttpResponseRedirect(reverse('news'))
+            print 'type is %s'%type(form.non_field_errors)
+        print 'form errors %s'%form.non_field_errors
     else:
-        form = UserCreationForm()
+        form = UserCreateForm()
         print 'form created'
-    return render(request, 'accounts/register.html',{'form':form})
+    return render(request, 'accounts/register_test.html', {'form': form})

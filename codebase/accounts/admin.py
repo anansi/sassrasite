@@ -3,6 +3,8 @@ from accounts.models import UserProfile
 from image_cropping import ImageCroppingMixin
 
 
+from django import forms
+
 
 class UserProfileAdmin(ImageCroppingMixin,admin.ModelAdmin):
     fieldsets = [

@@ -158,6 +158,13 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	padding:0;
 	}
 	
+#content_section {
+	position:relative;
+	margin:0 auto 0;
+	display:block;
+	width:960px;
+	padding-bottom:30px;
+	}
 /* --jQuery Tabs Specific - Only modify if you know what you are doing---*/
 
 .ui-tabs{}

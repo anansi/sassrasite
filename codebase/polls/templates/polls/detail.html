@@ -1,8 +1,12 @@
 {% extends "index.html" %}
+{% load staticfiles %}
 
-{% load static %}
+{% block extrahead %}
 
-{% block main_section %}
+<link rel="stylesheet" href="{% static "polls/poll_style.css" %}" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
 
 <h1>{{ poll.question }}</h1>
 
@@ -15,11 +19,7 @@
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}
  
- 
-
  <br/>
-
-
 
   {% if hasAlreadyVoted  %}
     Thanks, you have already voted on this Poll 
@@ -30,5 +30,6 @@
 
 
 </form>
-{% endblock %}
 
+
+{% endblock %}

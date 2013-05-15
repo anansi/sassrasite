@@ -12,7 +12,7 @@ ADMINS = (
     ('Your Name', 'your_email@example.com'),
 )
 
-BASE_DIR = '/Users/julz/Documents/stuff/projects/DEV/first_django_project/sassra/'
+BASE_DIR = '/Users/julz/Documents/stuff/projects/DEV/SASSRA_project/codebase'
 
 THUMBNAIL_DEBUG = True 
 MANAGERS = ADMINS

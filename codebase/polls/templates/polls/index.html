@@ -1,11 +1,15 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% load staticfiles %}
 
+{% block extrahead %}
 
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/poll_style.css' %}" />
 
-{% block content %}
+{% endblock %}
+
+{% block main_section %}
+<div id="poll_detail_section">
 
 {% if latest_poll_list %}
     <ul>
@@ -18,4 +22,6 @@
     <p>No polls are available.</p>
 {% endif %} 
 
+</div>
 {% endblock %}
+

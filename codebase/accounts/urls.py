@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.views import login, password_reset, password_change
 from accounts import views
-
+from startup import views as startup_views
 
 urlpatterns = patterns('',
 
@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'picture', views.cropPicture, name='cropPicture'),
     (r'^changepassword/$', 'django.contrib.auth.views.password_change'),
     (r'^password_change_done/$', 'django.contrib.auth.views.password_change_done'),
-    url(r'login', login, name='login'),#http://localhost:8000/stuntperformers/test
+    url(r'login', views.login_user, name='login'),#http://localhost:8000/stuntperformers/test
 
     url(r'logout', views.logout_user, name='logout'),#http://localhost:8000/stuntperformers/test
     # ex: /polls/

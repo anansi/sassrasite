@@ -1,19 +1,13 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
+{% load url from future %}
 
-{% block content %}
-  
-  {% if form.errors %}
-    <p class="error">Sorry, that's not a valid username or password</p>
-  {% endif %}
-  <form action="" method="post">
-    {% csrf_token %}
-    <label for="username">Email:</label>
-    <input type="text" name="username" value="" id="username">
-    <label for="password">Password:</label>
-    <input type="password" name="password" value="" id="password">
+{% block login_errors_section %}
 
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next|escape }}" />
-  </form>
+{% if login_form.errors %}
+
+
+{{login_form.non_field_errors}}
+{% endif %}
 
 {% endblock %}
+
