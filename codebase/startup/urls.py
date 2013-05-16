@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'startup.views.home', name='home'),
     url(r'^newsletter', 'startup.views.newsletter', name='newsletter'),
+    url(r'^login', 'startup.views.login_user', name='login_user'),
+    url(r'^register', 'startup.views.register', name='register_user'),
     url(r'^news', 'startup.views.news', name='news'),
 
     url(r'^polls/', include('polls.urls', namespace="polls")),

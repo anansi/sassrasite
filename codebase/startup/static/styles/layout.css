@@ -53,10 +53,14 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	line-height:normal;
 	}
 
-.col1{color:#FFFFFF; background-color:#161616; padding-bottom:30px;}
+.col1{color:#FFFFFF; background-color:#161616; padding-bottom:10px;}
 .col2{color:#9B9B9B; background-color:#F9F9F9;}
 
 /* ----------------------------------------------Generalise-------------------------------------*/
+
+#logo_holder{
+	margin:-40px 0 15px 0;
+}
 
 #header, #topbar, #container, #footer, #copyright{
 	position:relative;
@@ -68,7 +72,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 /* ----------------------------------------------Header-------------------------------------*/
 
 #header{
-	padding:0 0 0 0;
+	padding:-50 0 0 0;
 	}
 
 #header h1, #header p, #header ul{
@@ -163,7 +167,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	margin:0 auto 0;
 	display:block;
 	width:960px;
-	padding-bottom:30px;
+	padding-bottom:20px;
 	}
 /* --jQuery Tabs Specific - Only modify if you know what you are doing---*/
 

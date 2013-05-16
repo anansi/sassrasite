@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Stunt Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="{% static "styles/coin-slider.css" %}"/>
+<script type="text/javascript" src="{% static "scripts/jquery-1.4.1.min.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/jquery-coin-slider.min.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/jquery-ui-1.8.12.custom.min.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/script.js" %}"></script>
+<script type="text/javascript" src="{% static "scripts/coin-slider.min.js" %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#portfolioslider').coinslider({
+        width: 480,
+        height: 280,
+        navigation: false,
+        links: false,
+        hoverPause: true
+    });
+    $("#tabcontainer").tabs({
+        event: "click"
+    });
+});
+</script>
+<script src="{% static "scripts/Login_Reg_Script.js" %}" type="text/javascript"></script>
+{% block extrahead %}
+
+{% endblock %}
+</head>
+<body id="top">
+
+<input type='hidden' id='id_loginOpen' value='False'/>
+<input type='hidden' id='id_registerOpen' value='False'/>
+<!-- / container -->
+<div id="login_container">
+   
+<div id="login_box">
+<!-- Log in -->
+
+
+<div id="form_login">
+  {% block login_errors_section %}
+  {% endblock %}
+  
+<form method="post" action="{% url login_user %}" >
+{% csrf_token %}
+<ul>
+  {% if login_error %} 
+  <li>
+    
+{{login_error}}<br/><br/>
+
+  
+   {% elif register_error %} 
+
+  
+</li>
+{% endif %}
+<li>Email:  <input type="text" name="username" id="id_email" required/></li>
+<li>Password:<input type="password" name="password" id="id_email" required/></li>
+<li><input value="Login" type="submit" id="login_btn" /></li>
+</ul>
+<ul style="margin-top:10px;">
+
+<li><a href="#">Forgot Password</a></li></ul>
+<br clear="all" />
+</form>
+</div>
+<!-- end of Log in-->
+
+<!-- REg form -->
+<div id="form_reg">
+<form method="post" action="{% url register_user %}">
+  {% csrf_token %}
+  
+  
+{{register_form.non_field_errors}}
+
+        
+  <strong>{{ register_form.non_field_errors}}</strong> 
+
+<table>
+  <tr>
+    <td>First Name: </td>
+    <td><input type="text" id="id_first_name" name="first_name" value="{{register_form.first_name.value}}" required/></td>
+  <tr/>
+  <tr><td>{{register_form.first_name.errors}}</td></tr>
+  <tr>
+    <td>Last Name: </td>
+    <td><input type="text" id="id_last_name" name="last_name" value="{{register_form.last_name.value}}" required/></td>
+  <tr/>
+  <tr><td>{{register_form.last_name.errors}}</td></tr>
+  <tr>
+    <td>Email: </td>
+    <td><input type="text" name="email" id="id_email" value="{{register_form.email.value}}" required/></td>
+  </tr>
+  <tr><td>{{register_form.email.errors}}</td></tr>
+  <tr>
+    <td>Password: </td>
+    <td><input type="password" name="password1" value="" required/></td>
+  <tr/>
+  <tr><td>{{register_form.password1.errors}}</td></tr>
+  <tr>
+    <td>Confirm Password: </td>
+    <td><input type="password" name="password2" id="id_password2" value="" required/></td>
+  </tr>
+  <tr><td>{{register_form.password2.errors}}</td></tr>
+  <tr>
+    <td><input type="submit" value="Register Now"></td>
+  </tr>
+</table>
+</form>
+</div>
+<!-- end of -->
+<br clear="all"/>
+</div>
+<div id="login_box_sub">
+  <ul>
+  
+  {% if user.is_active %}
+  <li><strong> Welcome, {{user.email }}</strong></li> |
+  <li><a href="{% url accounts:logout %}" id="trigger">log out</a></li> 
+  {%else%} 
+  <li>hello guest !</li>|
+  <li><a href="#" id="trigger">log in</a></li> |
+  <li>Not a member? <a href="#" id="reg_btn">Register Here</a></li>
+  
+  {%endif %} 
+  </ul>
+  <br clear="all"/>
+</div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header" class="clear">
+    <div class="fl_left" id="logo_holder">
+
+      <h1><a href="index.html"><img src="{% static "images/logo.png" %}" width="537" height="199" alt="" /></a></h1>
+      <p> <!-- place any extra text here --></p>
+    </div>
+   </div>
+</div>
+<!-- ####################################################################################################### -->
+{% if user.is_active %}
+{% block top_bar_section %} {% endblock %}
+{% endif %}
+<!-- ####################################################################################################### -->
+<div id="content_section">
+{% block content %}
+{% endblock %}
+</div>
+<!-- ####################################################################################################### -->
+
+{% block middle_section %}
+  {%block tabs_section%} 
+  {% endblock %}
+{% endblock %}    
+
+<!-- ####################################################################################################### -->
+{%block footer_section%} 
+{% endblock %}
+<!-- ####################################################################################################### -->
+{%block copyright%}
+{% endblock %}
+
+
+  {% if login_error %} 
+
+
+  <script type="text/javascript">
+  
+    $("#login_box").slideToggle(0);
+    $("#form_login").css('display','block');
+    $("#form_reg").css('display','none');
+    $("#username").focus();
+  
+  </script>
+  
+   {% elif register_error %} 
+
+    <script type="text/javascript">
+  
+    $("#login_box").slideToggle(0);
+    $("#form_login").css('display','none');
+    $("#form_reg").css('display','block');
+    $("#username").focus();
+  
+  </script>
+  {% endif %}

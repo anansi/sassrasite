@@ -19,6 +19,18 @@ class UserCreateForm(UserCreationForm):
         # remove username
         self.fields.pop('username')
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        print 'email is: :%s:'%data
+        user = User.objects.get(email="new@mailie.com")#pk=email address
+        print 'cleaning email - user is :%s:'%user
+        if user is not None:
+            raise forms.ValidationError("The email address is already registered")
+
+        # Always return the cleaned data, whether you have changed it or
+        # not.
+        return data
+    
     class Meta:
         model = User
         fields = ( "email", "first_name", "last_name", "password1", "password2", )

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.views import login, password_reset, password_change
 from accounts import views
-from startup import views as startup_views
+
 
 urlpatterns = patterns('',
 
@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     # url(r'^$', views.index, name='index'),
     # # ex: /polls/5/
     url(r'profile', views.profile, name='profile'),
-    url(r'register', views.register, name='register'),
+    
 
     url(r'^user/password/reset/$', 
         'django.contrib.auth.views.password_reset', 

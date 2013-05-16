@@ -1,10 +1,36 @@
-{% extends "admin_sassrauser/base.html" %}
-{% load i18n %}
 
-{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
 
-{% block branding %}
-<h1 id="site-name">{% trans 'SASSRA' %}</h1>
-{% endblock %}
-
-{% block nav-global %}{% endblock %}
+ <form method="post" action="{% url accounts:register %}">
+  {% csrf_token %}
+  asdfasdfasdfasfd|
+  
+ {% if login_error %} 
+{{login_error}}
+{%endif%}
+|asdf
+<table>
+  <tr>
+    <td>First Name: </td>
+    <td><input type="text" id="id_first_name" name="first_name" required/></td>
+  <tr/>
+  <tr>
+    <td>Last Name: </td>
+    <td><input type="text" name="last_name" required/></td>
+  <tr/>
+  <tr>
+    <td>Email: </td>
+    <td><input type="text" name="email" id="id_email" required/></td>
+  </tr>
+  <tr>
+    <td>Password: </td>
+    <td><input type="text" name="password1" required/></td>
+  <tr/>
+  <tr>
+    <td>Confirm Password: </td>
+    <td><input type="text" name="password2" required/></td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="Register Now"></td>
+  </tr>
+</table>
+</form>
