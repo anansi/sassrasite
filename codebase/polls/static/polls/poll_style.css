@@ -4,3 +4,16 @@
 	display:block;
 	width:960px;
 	}
+
+
+#content_section {
+	position:relative;
+	margin:0 auto;
+	display:block;
+	width:960px;
+	padding-bottom:20px;
+	
+	}
+
+a{ color:#33CCCC;}
+a:hover{ color:#FFFFFF;};

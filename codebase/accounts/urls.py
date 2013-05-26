@@ -14,6 +14,11 @@ urlpatterns = patterns('',
     url(r'picture', views.cropPicture, name='cropPicture'),
     (r'^changepassword/$', 'django.contrib.auth.views.password_change'),
     (r'^password_change_done/$', 'django.contrib.auth.views.password_change_done'),
+    
+    (r'^stunt_profile_update_contact', views.stunt_profile_update_contact),
+    (r'^stunt_profile_update_measurements', views.stunt_profile_update_measurements),
+    url(r'^stunt_profile', views.stunt_profile, name='stunt_profile'),
+    
     url(r'login', views.login_user, name='login'),#http://localhost:8000/stuntperformers/test
 
     url(r'logout', views.logout_user, name='logout'),#http://localhost:8000/stuntperformers/test

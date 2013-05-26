@@ -17,6 +17,16 @@ table thead th{
 	vertical-align:middle;
 	}
 
+table thead th a{
+	color:#FFFFFF;
+	background-color:#666666;
+	border:1px solid #CCCCCC;
+	border-collapse:collapse;
+	text-align:left;
+	table-layout:auto;
+	vertical-align:middle;
+	}
+
 table tbody td{
 	vertical-align:top;
 	border-collapse:collapse;

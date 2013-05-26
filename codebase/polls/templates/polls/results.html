@@ -1,4 +1,14 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
+{% load staticfiles %}
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static "polls/poll_style.css" %}" type="text/css" media="all" />
+{% endblock %}
+
+{%block polls_li_section%}
+	class="active"
+{%endblock%}
 
 
 {%block content%}

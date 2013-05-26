@@ -29,6 +29,9 @@ html[xmlns] .clear{display:block;}
 
 a{outline:none; text-decoration:none;}
 
+ .inlinks{ color:#33CCCC;}
+ .inlinks:hover{ color:#CCC;}
+
 .fl_left{float:left;}
 .fl_right{float:right;}
 
@@ -162,13 +165,6 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	padding:0;
 	}
 	
-#content_section {
-	position:relative;
-	margin:0 auto 0;
-	display:block;
-	width:960px;
-	padding-bottom:20px;
-	}
 /* --jQuery Tabs Specific - Only modify if you know what you are doing---*/
 
 .ui-tabs{}
@@ -319,6 +315,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 #footer{
 	padding:20px 0;
+	width:960px;
 	}
 
 #footer h2, #footer p, #footer ul, #footer a{
@@ -335,12 +332,13 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	background-color:#161616;
 	}
 
-#footer .footbox{
+.footbox{
 	display:block;
 	float:left;
-	width:225px;
-	margin:0 20px 0 0;
+	width:450px;
+	margin:0 30px 0 0;
 	padding:0;
+
 	}
 
 #footer h2{
@@ -351,6 +349,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 #footer p{
 	margin-bottom:10px;
+	width:100%;
 	}
 
 #footer li{

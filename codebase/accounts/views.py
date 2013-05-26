@@ -10,7 +10,7 @@ from accounts.models import UserProfile
 from django.template import Context, loader
 from easy_thumbnails.files import get_thumbnailer
 from example.models import Image
-from accounts.forms import ImageForm
+from accounts.forms import ImageForm, UserMeasurementsForm, UserContactForm
 from django.contrib.auth.forms import AuthenticationForm
 
 def thumbnail_options(request):
@@ -101,3 +101,55 @@ def viewProfile(request):
         'image': userProfileI,
     })
     return HttpResponse(template.render(context))
+
+def stunt_profile_update_measurements(request):
+    print 'meas update requested'
+    userProfileI = UserProfile.objects.get(user=request.user)
+    print 'arm is %s'%userProfileI.id
+    
+    measurements_form = UserMeasurementsForm(instance = userProfileI)
+    return render(request, 'accounts/stunt_profile_update_measurements.html', {'measurements_form': measurements_form})
+
+def stunt_profile_update_contact(request):
+    print 'meas update requested' 
+    userProfileI = UserProfile.objects.get(user=request.user)
+    print 'arm is %s'%userProfileI.id
+    
+    contact_form = UserContactForm(instance = userProfileI)
+    return render(request, 'accounts/stunt_profile_update_contact.html', {'contact_form': contact_form})
+
+
+def stunt_profile(request):
+    print 'stunt_profile requested from accounts.views'
+    userProfileI = UserProfile.objects.get(user=request.user)
+    print 'arm is %s'%request.POST.lists()
+    
+    measurements_form = UserMeasurementsForm(instance = userProfileI)
+    contact_form = UserContactForm(instance=userProfileI)
+    print 'contact form %s'%contact_form.__dict__
+    if request.method == 'POST':
+        print 'post received in accounts.stunt_profile'
+
+        #determine if the form is the contact form, so we know which form to process
+        if 'mobile' in request.POST:
+            print 'contact found, called molder and skully'
+
+            contact_form = UserContactForm(request.POST, instance = userProfileI)
+            if contact_form.is_valid():
+                print 'form is valid'            
+                contact_form.save()
+            else:
+                print 'form not valid'            
+                return render(request, 'accounts/stunt_profile_update_contact.html', {'measurements_form': measurements_form, 'contact_form':contact_form})
+        else:
+            
+            measurements_form = UserMeasurementsForm(request.POST, instance = userProfileI)
+            if measurements_form.is_valid():
+                print 'form is valid'            
+                measurements_form.save()
+            else:
+                print 'form is NOT valid'
+                return render(request, 'accounts/stunt_profile_update_measurements.html', {'measurements_form': measurements_form, 'contact_form':contact_form})
+        return render(request, 'accounts/stunt_profile.html', {'measurements_form': measurements_form, 'contact_form':contact_form})
+    return render(request, 'accounts/stunt_profile.html', {'measurements_form': measurements_form, 'contact_form':contact_form})
+

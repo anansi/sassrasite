@@ -33,11 +33,10 @@ def detail(request, poll_id):
         profile.save()
         print 'created profile for user'
     
-    #hasVotedOnPoll = p in pollsVoted.objects.get(pk=1)
-    print profile.pollsVoted.all()
+    
     hasVotedOnPoll = True
     try:
-        profile.pollsVoted.get(pk=poll_id)
+        profile.polls_voted.get(pk=poll_id)
     except ObjectDoesNotExist:
         hasVotedOnPoll=False
         print 'caught exc and hasvoted=false'
@@ -76,7 +75,7 @@ def vote(request, poll_id):
     profile = UserProfile.objects.get(user=user)
 
     poll = get_object_or_404(Poll, pk=poll_id)
-    profile.pollsVoted.add(poll)
+    profile.polls_voted.add(poll)
     
     p = get_object_or_404(Poll, pk=poll_id)
     try:

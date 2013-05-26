@@ -1,33 +1,44 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {%block extrahead%}
-<link href="/static/style.css" rel="stylesheet" type="
-	text/css" />
+<style>
+#content_section {
+	position:relative;
+	margin:0 auto;
+	display:block;
+	width:960px;
+	padding-bottom:20px;
+	
+	}
+</style>
 {%endblock%}
+
+{%block news_li_section%}
+class="active"
+{%endblock%}
+
 {%block content%}
+<h2>Welcome To SASSRA!</h2>
+<p></p>
+<!-- line break -->
+<div style="margin-top:10px; margin-bottom:10px; border-bottom:1px solid #333;"></div>
+<!-- end of line break -->
+<h2>Notice</h2>
+<p></p>
+Hello members of SASSRA. Please vote as requested in the last <a class="inlinks" href="/newsletter">newsletter</a> on the following 2 polls at the link below: </p>
 
-<div id="navheader">
-            		
-	           		
-					<ul class="navigation">
-						<li><a href="/">Home</a></li>
-						<li><a href="/news">News</a></li>
-						
-						<li><a href="/accounts/register">Register</a></li>
-						<li><a href="/accounts/login">Login</a></li>
-					</ul>
-			</div>
-<br/><br/><br/>
-
-Hello members of SASSRA. Please vote as requested in the last <a  href="/newsletter">newsletter</a> on the following 2 polls at the link below: <br/>
-
-<a href="{% url polls:index %}">Vote</a>
-<br/>
-
+<h4>Vote: <a class="inlinks" href="{% url polls:index %}">here</a></h4>
+<p>
 The site is brand new and has been rigged. Its going through a styling phase now. As with the previous site, all riggers and stunt performers will have profiles. But please note that this time your profile details WILL NOT BE PUBLIC. Boardmembers, coordinators etc will have access to it. Things like contact details will be shared between fellow members though.
+</p>
+<p>
+Thanks guys,<br/>
+<span style = "font-weight:bold; text-transform:capitalize;">
+</p>
+<!-- line break -->
+<div style="margin-top:10px; margin-bottom:10px; border-bottom:1px solid #333;"></div>
+<!-- end of line break -->
 
-<br/>
-Thanks guys,
-Julian
+
 
 
 {% endblock %}

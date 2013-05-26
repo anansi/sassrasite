@@ -6,15 +6,23 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/poll_style.css' %}" />
 
+
+
+
 {% endblock %}
 
-{% block main_section %}
+{%block polls_li_section%}
+	class="active"
+{%endblock%}
+
+
+{% block content %}
 <div id="poll_detail_section">
 
 {% if latest_poll_list %}
     <ul>
     {% for poll in latest_poll_list %} Poll {{forloop.counter}}
-        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+        <li><a class="inlinks" href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
         <br/>
     {% endfor %}
     </ul>

@@ -6,13 +6,19 @@
 <link rel="stylesheet" href="{% static "polls/poll_style.css" %}" type="text/css" media="all" />
 {% endblock %}
 
+
+{%block polls_li_section%}
+	class="active"
+{%endblock%}
+
+
 {% block content %}
 
-<h1>{{ poll.question }}</h1>
+<h1 style="text-transform:capitalize;">{{ poll.question }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url polls:vote poll.id %}" method="post">
+<form action="{% url polls:vote poll.id %}" method="post"  style="text-transform:capitalize;">
 {% csrf_token %}
 {% for choice in poll.choice_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />

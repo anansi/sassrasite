@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
 
     #the polls that the user has already voted on
-    pollsVoted = models.ManyToManyField(Poll)
+    polls_voted = models.ManyToManyField(Poll)
     #profile pic - the standard one
     image = ImageCropField( upload_to='casualPictures')
     test = models.ImageField(upload_to='testpics')
@@ -36,7 +36,7 @@ class UserProfile(models.Model):
 
 
     #user traits    
-    date_of_birth = models.DateField(default='2110-10-10')
+    date_of_birth = models.DateField(default='1992-10-10')
     height = models.IntegerField(default=0)
     eye_colour = models.CharField(max_length=15)
     background = models.CharField(max_length=200)
@@ -68,5 +68,9 @@ class UserProfile(models.Model):
 
     	else:
     		return self.user.first_name + ' ' + self.user.last_name 
+
+    def email(self):
+        return self.user.username
+
 
     
