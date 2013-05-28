@@ -83,7 +83,7 @@ def cropPicture(request, image_id=None):
             print 'requested user profile image doesnt exist'        
             crop_photo_instance = CropPhotoTool()
             form = ImageForm(instance=crop_photo_instance)
-            return render(request, 'accounts/modelform_example.html', {'form': form})        
+            return render(request, 'accounts/modelform_example.html', {'form': form})
         else:
             #the image exists
             print 'requested user profile image exists: %s'%image
@@ -102,8 +102,10 @@ def cropPicture(request, image_id=None):
             #determine if the initial upload was done, or if this was a cropping save call
             image = form.save()
             print 'image url %s'%form.cleaned_data['image']
-            crop_photo_instance = CropPhotoTool(instance=image)
-            form = ImageForm(request.POST, request.FILES, instance=crop_photo_instance)
+            print 'image id %s'%image.id
+            #image = get_object_or_404(Image, pk=image.id) if image.id else None
+
+            form = ImageForm(instance=image)
             return render(request, 'accounts/modelform_example.html', {'form': form})
 
             #get the crop coordinates from the form
@@ -131,14 +133,11 @@ def cropPicture(request, image_id=None):
             # file_url = dirname+'/'+user_id+'_headshot_front'+'.jpeg'
             #region.save(file_url,"jpeg")
             
-
-            
-            
             #return HttpResponseRedirect(reverse('accounts:cropPicture', args=(image.pk,)))
         else:
             print 'form not valid'
     print 'cropPicture \'picture\' page loading'
-    return render(request, 'accounts/modelform_example.html', {'form': form, 'crop_photo_instance': crop_photo_instance})
+    return render(request, 'accounts/modelform_example.html', {'form': form})
 
 def profile(request):    
     return HttpResponseRedirect(reverse('home'))
