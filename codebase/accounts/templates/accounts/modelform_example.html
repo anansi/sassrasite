@@ -14,10 +14,10 @@
     <input type="submit" value="Save"/>
   </form>
   
-  {% if up %}
+  {% if crop_photo_instance %}
     <br />
     <h4>Preview</h4>
-      <img src="{% cropped_thumbnail up cropping %}" />
+      <img src="{% cropped_thumbnail crop_photo_instance cropping %}" />
   {% endif %}
 
 {% endblock %}

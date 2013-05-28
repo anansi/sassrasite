@@ -11,13 +11,9 @@ class UserProfile(models.Model):
     #the polls that the user has already voted on
     polls_voted = models.ManyToManyField(Poll)
     #profile pic - the standard one
-    image = ImageCropField( upload_to='casualPictures')
-    test = models.ImageField(upload_to='testpics')
-    
+    front_headshot =  models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    front_45_headshot = models.ImageField(upload_to='testpics',null=True)
     # size is "width x height"
-    cropping = ImageRatioField('image', '430x360')
-    class Meta:
-        app_label = 'accounts'
 
     mobile = models.CharField(max_length=10)   
     
@@ -73,4 +69,12 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+class CropPhotoTool(models.Model):
+    #The Field that allows you to crop an image
+    image = ImageCropField( upload_to='casualPicturesCropTool')
     
+    # size is "width x height"
+    cropping = ImageRatioField('image', '430x360')
+    class Meta:
+        app_label = 'accounts'
+

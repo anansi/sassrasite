@@ -11,7 +11,7 @@ class UserProfileAdmin(ImageCroppingMixin,admin.ModelAdmin):
     	('User Profile for User', {'fields': ['user',]}),
         ('Personal information', {'fields': ['mobile','date_of_birth']}),
         ('Measurements and body specifics', {'fields': ['eye_colour','hair_colour','neck','height', 'weight','shoe_size','chest','bust','arm','head','back','waist','inner_leg','outer_leg','wrist','bicep','hips','ethnicity']}),
-    	('Pictures', {'fields': ['image','cropping','test']}),
+    	('Pictures', {'fields': ['front_headshot',]}),
     ]
     list_display = ('username',)
 

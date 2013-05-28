@@ -1,12 +1,12 @@
 from django import forms
-from accounts.models import UserProfile
+from accounts.models import CropPhotoTool, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
 class ImageForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = CropPhotoTool#the old model was directly using: UserProfile
         fields = ('image','cropping')
 
 
