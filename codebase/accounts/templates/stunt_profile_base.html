@@ -1,0 +1,98 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+<style>
+
+#img_cont{ list-style:none; margin:0; padding:0;}
+#img_cont li{ display:inline-block; margin-right:5px;}
+#tbl_cont{ text-transform:capitalize;}
+#tbl_cont span{font-weight:bold; font-size:11px; color:#000;}
+#tbl_cont a:hover{ color:#000;}
+#input_field{ float:right;}
+#input_field2{ float:none;}
+#input_field2{ float:none; margin-left:20px;}
+#text{ float: right; margin-right: 20px;}
+</style>
+{% endblock %}
+
+
+{%block stunt_profile_li_section %}
+    class="active"
+{%endblock%}
+
+{% block content %}
+<div class="wrapper col2">
+  <div id="container" class="clear">
+    <!-- ####################################################################################################### -->
+    <div id="content">
+    <table id="tbl_cont" cellpadding="0" cellspacing="0">
+    <thead>
+          <tr>
+            <th colspan="6">{{user.first_name}} {{user.last_name}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>edit your profile</span></td>
+            
+          </tr>
+        </tbody>
+    </table>
+    {% block profile_pictures_section %} 
+    {% endblock %}
+      <table id="tbl_cont" summary="Summary Here" cellpadding="0" cellspacing="0">
+        {% block measurements_section %}
+        {% endblock %}
+        {% block contact_section %}
+        <thead>
+    <tr>
+    <th colspan="4">contact details <a style="background-color:#666666;border-bottom-color:#666;border-left-color:#666;border-right-color:#666;border-top-color:#666;" href="/accounts/stunt_profile_update_contact">Update </a></th>
+    </tr>
+</thead>
+    <tbody>
+      <tr>
+        <td colspan="3"><span>Email :</span><span id="text">{{user.username}}</span></td>
+        </tr>
+        <tr>
+        <td colspan="3"><span>Mobile No :</span><span id="text">{{contact_form.mobile.value}}</span></td>
+        </tr>
+    </tbody>
+        {% endblock %}
+        
+       
+
+        </tbody>
+      </table>
+      
+    </div>
+    <div id="column">
+      <div class="subnav">
+        <h2>Calendar</h2>
+        <img src="{% static "images/cal.png" %}"  style="margin-bottom:20px; width:100%;"/>
+        <br/>
+        <ul>
+          <li style="background-color:#666; width:100%;">Menu 1</li>
+          <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+         <li style="background-color:#666; width:100%;">Menu 2 </li>
+          <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+          
+          <li style="background-color:#666; width:100%;">Menu 3</li>
+            <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+          </ul>
+      </div>
+     </div>
+    <!-- ####################################################################################################### -->
+  </div>
+</div>
+
+{% endblock %}

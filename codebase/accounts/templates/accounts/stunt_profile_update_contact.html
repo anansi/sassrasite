@@ -1,0 +1,36 @@
+{% extends "stunt_profile_base.html" %}
+{% load staticfiles %}
+
+
+{% block contact_section %}
+<form method="post" action="{% url accounts:stunt_profile %}" id="contact_form">
+{% csrf_token %}
+<thead>
+          <tr>
+            <th colspan="4">Contact Details</th>
+          </tr>
+</thead>
+<tbody> 
+        <tr>
+            <th colspan="4" align="left">{{contact_form.non_field_errors}}</th>
+          </tr>
+          <tr>
+            
+            <td><span>email :</span><span id="input_field"><input type="text" name="" id="" value="{{user.email}}" readonly/> </span>
+                </tr>
+                <tr>
+            <td>
+              {{contact_form.mobile.errors}}
+              <span>mobile :</span><span id="input_field">{{contact_form.mobile}}</span></td>
+            </tr>
+            <tr>
+
+            <th colspan="4" align="right"><a style="margin-right:10px;" href="#" onclick="document.getElementById('contact_form').submit();">Save </a></th>
+            
+            </tr>
+</tbody>
+    
+    
+   
+</form>
+{% endblock %}

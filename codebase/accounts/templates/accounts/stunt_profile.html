@@ -1,0 +1,122 @@
+{% extends "stunt_profile_base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block profile_pictures_section %} 
+    
+<ul id="img_cont">
+    {% if userProfileI.front_headshot %}
+    <li><a href="{% url accounts:cropPicture 1%}" ><img src="{% thumbnail userProfileI.front_headshot 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 1%}"> <img src="{% static "images/demo/gallery/1.gif" %}" /></a></li>
+    {% endif %}
+    
+    {% if userProfileI.front_45_headshot %}
+    <li><a href="{% url accounts:cropPicture 2%}" ><img src="{% thumbnail userProfileI.front_45_headshot 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 2%}"> <img src="{% static "images/demo/gallery/2.gif" %}" /></a></li>
+    {% endif %}
+
+    {% if userProfileI.side_headshot %}
+    <li><a href="{% url accounts:cropPicture 3%}" ><img src="{% thumbnail userProfileI.side_headshot 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 3%}"> <img src="{% static "images/demo/gallery/3.gif" %}" /></a></li>
+    {% endif %}
+
+    {% if userProfileI.back_of_headshot %}
+    <li><a href="{% url accounts:cropPicture 4%}" ><img src="{% thumbnail userProfileI.back_of_headshot 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 4%}"> <img src="{% static "images/demo/gallery/4.gif" %}" /></a></li>
+    {% endif %}
+
+    
+    </ul>
+    <br/>
+    <ul id="img_cont">
+
+    {% if userProfileI.front_full_body %}
+    <li><a href="{% url accounts:cropPicture 5%}" ><img src="{% thumbnail userProfileI.front_full_body 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 5%}"> <img src="{% static "images/demo/gallery/1.gif" %}" /></a></li>
+    {% endif %}
+
+    {% if userProfileI.front_45_full_body %}
+    <li><a href="{% url accounts:cropPicture 6%}" ><img src="{% thumbnail userProfileI.front_45_full_body 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 6%}"> <img src="{% static "images/demo/gallery/2.gif" %}" /></a></li>
+    {% endif %}
+
+    {% if userProfileI.side_full_body %}
+    <li><a href="{% url accounts:cropPicture 7%}" ><img src="{% thumbnail userProfileI.side_full_body 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 7%}"> <img src="{% static "images/demo/gallery/3.gif" %}" /></a></li>
+    {% endif %}
+    
+    {% if userProfileI.back_of_full_body %}
+    <li><a href="{% url accounts:cropPicture 8%}" ><img src="{% thumbnail userProfileI.back_of_full_body 300x178 %}" /></a></li>
+    {% else %}
+    <li><a href="{% url accounts:cropPicture 8%}"> <img src="{% static "images/demo/gallery/4.gif" %}" /></a></li>
+    {% endif %}
+    </ul>
+{% endblock %}
+
+
+{% block measurements_section %}
+<thead>
+  <tr>
+    <th colspan="4">Measurements And Body Specifics <a style="background-color:#666666;border-bottom-color:#666;border-left-color:#666;border-right-color:#666;border-top-color:#666;" href="/accounts/stunt_profile_update_measurements">Update </a></th>
+    
+  </tr>
+</thead>
+<tbody>
+        <tr>
+            <th colspan="4" align="left">{{measurements_form.non_field_errors}}</th>
+          </tr>
+          <tr>
+            <td><span>height :</span><span id="text">{{measurements_form.height.value}}</span></td>
+            
+            <td><span>arm :</span><span id="text">{{measurements_form.arm.value}}</span></td>
+            
+            <td><span>outer leg :</span><span id="text">{{measurements_form.outer_leg.value}}</span></td>
+            
+            </tr><tr>
+            
+            <td><span>weight :</span><span id="text">{{measurements_form.weight.value}}</span></td>
+            <td><span>head :</span><span id="text">{{measurements_form.head.value}}</span></td>
+            <td><span>wrist :</span><span id="text">{{measurements_form.wrist.value}}</span></td>
+            </tr><tr>
+            <td><span>shoe size :</span><span id="text">{{measurements_form.shoe_size.value}}</span></td>
+            <td><span>back :</span><span id="text">{{measurements_form.back.value}}</span></td>
+            <td><span>bicep :</span><span id="text">{{measurements_form.bicep.value}}</span></td>
+            </tr><tr>
+            <td><span>chest :</span><span id="text">{{measurements_form.chest.value}}</span></td>
+            <td><span>waist :</span><span id="text">{{measurements_form.waist.value}}</span></td>
+            
+            <td><span>hips :</span><span id="text">{{measurements_form.hips.value}}</span></td>
+            </tr><tr>
+            <td><span>neck :</span><span id="text">{{measurements_form.neck.value}}</span></td>
+            <td><span>inner leg :</span><span id="text">{{measurements_form.inner_leg.value}}</span></td>
+            <td><span>ethnicity :</span><span id="text">{{measurements_form.ethnicity.value}}</span></td>
+            </tr><tr>
+            <td><span>bust :</span><span id="text">{{measurements_form.bust.value}}</span></td>
+            <td><span>eye color :</span><span id="text">{{measurements_form.eye_colour.value}}</span></td>
+            <td><span>hair color :</span><span id="text">{{measurements_form.hair_colour.value}}</span></td>
+            </tr>
+            
+</tbody>
+{% endblock %}
+{% block contact_section %}
+<thead>
+    <tr>
+    <th colspan="4">contact details <a style="background-color:#666666;border-bottom-color:#666;border-left-color:#666;border-right-color:#666;border-top-color:#666;" href="/accounts/stunt_profile_update_contact">Update </a></th>
+    </tr>
+</thead>
+    <tbody>
+      <tr>
+        <td colspan="3"><span>Email :</span><span id="text">{{user.username}}</span></td>
+        </tr>
+        <tr>
+        <td colspan="3"><span>Mobile No :</span><span id="text">{{contact_form.mobile.value}}</span></td>
+        </tr>
+    </tbody>
+{% endblock %}

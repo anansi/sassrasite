@@ -1,0 +1,98 @@
+{% extends "stunt_profile_base.html" %}
+{% load staticfiles %}
+
+
+{% block measurements_section %}
+<form method="post" action="{% url accounts:stunt_profile %}" id="measurements_form">
+{% csrf_token %}
+
+<thead id="measure">
+          <tr>
+            <th colspan="4">Measurements and Body Specifics</th>
+          </tr>
+
+</thead>
+<tbody> 
+        <tr>
+            <th colspan="4" align="left">{{measurements_form.non_field_errors}}</th>
+          </tr>
+          <tr>
+            <td>
+                {{measurements_form.height.errors}}
+                <span>height :</span><span id="input_field">{{measurements_form.height}}</span></td>
+            
+            <td>
+                {{measurements_form.arm.errors}}
+                <span>arm :</span><span id="input_field">{{measurements_form.arm}}</span></td>
+            
+            <td>
+                {{measurements_form.outer_leg.errors}}
+                <span>outer leg :</span><span id="input_field">{{measurements_form.outer_leg}}</span></td>
+            
+            </tr><tr>
+            
+            <td>
+                {{measurements_form.weight.errors}}
+                <span>weight :</span><span id="input_field">{{measurements_form.weight}}</span></td>
+            <td>
+                {{measurements_form.head.errors}}
+                <span>head :</span><span id="input_field">{{measurements_form.head}}</span></td>
+            <td>
+                {{measurements_form.wrist.errors}}
+                <span>wrist :</span><span id="input_field">{{measurements_form.wrist}}</span></td>
+            </tr><tr>
+            <td>
+                {{measurements_form.shoe_size.errors}}
+                <span>shoe size :</span><span id="input_field">{{measurements_form.shoe_size}}</span></td>
+            <td>
+                {{measurements_form.back.errors}}
+                <span>back :</span><span id="input_field">{{measurements_form.back}}</span></td>
+            <td>
+                {{measurements_form.bicep.errors}}
+                <span>bicep :</span><span id="input_field">{{measurements_form.bicep}}</span></td>
+            </tr><tr>
+            <td>
+                {{measurements_form.chest.errors}}
+                <span>chest :</span><span id="input_field">{{measurements_form.chest}}</span></td>
+            <td>
+                {{measurements_form.waist.errors}}
+                <span>waist :</span><span id="input_field">{{measurements_form.waist}}</span></td>
+            
+            <td>
+                {{measurements_form.hips.errors}}
+                <span>hips :</span><span id="input_field">{{measurements_form.hips}}</span></td>
+            </tr><tr>
+            <td>
+                {{measurements_form.neck.errors}}
+                <span>neck :</span><span id="input_field">{{measurements_form.neck}}</span></td>
+            <td>
+                {{measurements_form.inner_leg.errors}}
+                <span>inner leg :</span><span id="input_field">{{measurements_form.inner_leg}}</span></td>
+            <td>
+                {{measurements_form.ethnicity.errors}}
+                <span>ethnicity :</span><span id="input_field">{{measurements_form.ethnicity}}</span></td>
+            </tr><tr>
+            <td>
+                {{measurements_form.bust.errors}}
+                <span>bust :</span><span id="input_field">{{measurements_form.bust}}</span></td>
+            <td>
+                {{measurements_form.eye_colour.errors}}
+                <span>eye colour :</span><span id="input_field">{{measurements_form.eye_colour}}</span>
+            </td>
+
+            <td>
+                {{measurements_form.hair_colour.errors}}
+                <span>hair color :</span><span id="input_field">{{measurements_form.hair_colour}}</span>
+            </td>
+            </tr>
+            <tr>
+
+            <th colspan="4" align="right"><a style="margin-right:10px;" href="#measure" onclick="document.getElementById('measurements_form').submit();">Save </a></th>
+            
+            </tr>
+</tbody>
+    
+    
+   
+</form>
+{% endblock %}

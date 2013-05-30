@@ -1,0 +1,11 @@
+do a register test. 
+
+use 
+<form method="post" action="{% url accounts:register %}">
+  {% csrf_token %}
+{{register_form.email.errors}}
+{{register_form.email}}
+<td><input type="submit" value="Register Now"></td>
+</form>
+
+and see if the is_valid can be made to work in the view

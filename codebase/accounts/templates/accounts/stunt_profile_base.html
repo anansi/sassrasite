@@ -1,0 +1,377 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+<style>
+
+#img_cont{ list-style:none; margin:0; padding:0;}
+#img_cont li{ display:inline-block; margin-right:5px;}
+#tbl_cont{ text-transform:capitalize;}
+#tbl_cont span{ margin-right:0; font-weight:bold; font-size:11px; color:#000;}
+#tbl_cont a:hover{ color:#000;}
+#input_field{ float:right;}
+#input_field2{ float:none;}
+#input_field2{ float:none; margin-left:20px;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper col2">
+  <div id="container" class="clear">
+    <!-- ####################################################################################################### -->
+    <div id="content">
+    <table id="tbl_cont" cellpadding="0" cellspacing="0">
+    <thead>
+          <tr>
+            <th colspan="6">name suranme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>edit your profile</span></td>
+            <td><a href="#">change photos</a></td>
+            <td><a href="#">edit profile</a></td>
+            <td><a href="#">calendar</a></td>
+            <td><a href="#">resume</a></td>
+            <td><span><a href="#">print screen</a></span></td>
+          </tr>
+        </tbody>
+    </table>
+    <ul id="img_cont">
+    <li><img src="{% static "images/demo/gallery/1.gif"  %}" /></li>
+    <li><img src="{% static "images/demo/gallery/2.gif" %}" /></li>
+    <li><img src="{% static "images/demo/gallery/3.gif" %}" /></li>
+    <li><img src="{% static "images/demo/gallery/4.gif" %}"/></li>
+    </ul>
+    <br/>
+    <ul id="img_cont">
+    <li><img src="{% static "images/demo/gallery/1.gif" %}"height="250" width="150" /></li>
+    <li><img src="{% static "images/demo/gallery/2.gif" %}" height="250" width="150" /></li>
+    <li><img src="{% static "images/demo/gallery/3.gif" %}" height="250" width="150" /></li>
+    <li><img src="{% static "images/demo/gallery/4.gif" %}" height="250" width="150" /></li>
+    </ul>
+      <table id="tbl_cont" summary="Summary Here" cellpadding="0" cellspacing="0">
+        {% block measurements_section %}
+        {% endblock %}
+        <thead>
+          <tr>
+            <th colspan="4">contact details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3"><span>email :</span>0.00 cm</td>
+            </tr><tr>
+            <td colspan="3"><span>phone number :</span>0 kg</td>
+            </tr><tr>
+            <td colspan="3"><span>sasra number :</span>0</td>
+            </tr><tr>
+            <td colspan="3"><span>sasra membership :</span>0 cm</td>
+            </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="4">skills list: stunts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>skill</span></td>
+            <td><span>rating</span></td>
+            <td><span>comment</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="4">skills list: general</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>skill</span></td>
+            <td><span>rating</span></td>
+            <td><span>comment</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="4">skills list: specific</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>skill</span></td>
+            <td><span>rating</span></td>
+            <td><span>comment</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+			<td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr><tr>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            </tr>
+            <thead>
+          <tr>
+            <th colspan="4">background</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+        </tbody>
+        </tbody>
+      </table>
+      <h2>Write A Comment</h2>
+      <div id="respond">
+        <form action="#" method="post">
+          <p>
+            <input type="text" name="name" id="name" value="" size="22" />
+            <label for="name"><small>Name (required)</small></label>
+          </p>
+          <p>
+            <input type="text" name="email" id="email" value="" size="22" />
+            <label for="email"><small>Mail (required)</small></label>
+          </p>
+          <p>
+            <textarea name="comment" id="comment" cols="100%" rows="10"></textarea>
+            <label for="comment" style="display:none;"><small>Comment (required)</small></label>
+          </p>
+          <p>
+            <input name="submit" type="submit" id="submit" value="Submit Form" />
+            &nbsp;
+            <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
+          </p>
+        </form>
+      </div>
+    </div>
+    <div id="column">
+      <div class="subnav">
+        <h2>Calendar</h2>
+        <img src="{% static "images/cal.png" %}"  style="margin-bottom:20px; width:100%;"/>
+        <br/>
+        <ul>
+          <li style="background-color:#666; width:100%;">Menu 1</li>
+          <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+         <li style="background-color:#666; width:100%;">Menu 2 </li>
+          <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+          
+          <li style="background-color:#666; width:100%;">Menu 3</li>
+            <ul>
+              <li><a href="#">link #</a></li>
+              <li><a href="#">link #</a></li>
+            </ul>
+          </ul>
+      </div>
+     </div>
+    <!-- ####################################################################################################### -->
+  </div>
+</div>
+
+{% endblock %}
