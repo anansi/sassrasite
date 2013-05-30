@@ -4,9 +4,9 @@ from accounts import views
 
 
 urlpatterns = patterns('',
-
-    url(r'^cropPicture/(?P<image_id>\d+)/$', views.cropPicture, name='cropPicture'),
-    url(r'^cropPicture/$', views.cropPicture, name='cropPicture'),
+    url(r'^cropPicture/(?P<image_id>\d+)/$', views.cropPicture, name='cropPictureA'),
+    url(r'^cropPicture/(?P<image_id>\d+)', views.cropPicture, name='cropPicture'),
+    url(r'^cropPicture/$', views.cropPicture, name='cropPicture'),  
     url(r'thumb', views.thumbnail_options, name='thumbnail_options'),
     # (r'login/$',  login),
     # (r'^accounts/logout/$', logout),

@@ -15,7 +15,7 @@ def thumbnail(image_path):
     thumbnailer = get_thumbnailer(image_path)
     thumbnail_options = {
         'detail': True,
-        'size': getattr(settings, 'IMAGE_CROPPING_THUMB_SIZE', (300, 300)),
+        'size': getattr(settings, 'IMAGE_CROPPING_THUMB_SIZE', (420, 500)),
     }
     thumb = thumbnailer.get_thumbnail(thumbnail_options)
     return thumb.url

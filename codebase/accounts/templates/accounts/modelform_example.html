@@ -4,20 +4,23 @@
   {{ form.media }}
 {% endblock %}
 {% block content %}
-
+|{{form.non_field_errors}}|
   <form method="post" id="cropping_form" action="." enctype="multipart/form-data">{% csrf_token %}
-    <input name="image" type="file" id="id_image" />
+    
     {% for field in form %}
     ;
+    |{{field.errors}}|
         {{ field.label_tag }}: {{ field }}
     {% endfor %}
-    <input type="submit" value="Save"/>
+    <button type="submit" value="preview" name="preview">Preview</button> 
+    
+    <input type="submit" value="Keep Photo"/>
   </form>
-  
-  {% if crop_photo_instance %}
+
+  {% if image %}
     <br />
     <h4>Preview</h4>
-      <img src="{% cropped_thumbnail crop_photo_instance cropping %}" />
+      <img src="{% cropped_thumbnail image cropping %}" />
   {% endif %}
 
 {% endblock %}

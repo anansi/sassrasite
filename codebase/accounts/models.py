@@ -12,7 +12,14 @@ class UserProfile(models.Model):
     polls_voted = models.ManyToManyField(Poll)
     #profile pic - the standard one
     front_headshot =  models.ImageField(upload_to='casualPicturesCropTool',null=True)
-    front_45_headshot = models.ImageField(upload_to='testpics',null=True)
+    front_45_headshot = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    side_headshot = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    back_of_headshot = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    front_full_body = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    front_45_full_body = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    side_full_body = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+    back_of_full_body = models.ImageField(upload_to='casualPicturesCropTool',null=True)
+
     # size is "width x height"
 
     mobile = models.CharField(max_length=10)   
@@ -74,7 +81,7 @@ class CropPhotoTool(models.Model):
     image = ImageCropField( upload_to='casualPicturesCropTool')
     
     # size is "width x height"
-    cropping = ImageRatioField('image', '430x360')
+    cropping = ImageRatioField('image', '420x500', size_warning=True)
     class Meta:
         app_label = 'accounts'
 

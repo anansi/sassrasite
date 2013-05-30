@@ -175,6 +175,8 @@ INSTALLED_APPS = (
     'example'
 )
 
+#ImageCropping constants
+#IMAGE_CROPPING_THUMB_SIZE = 
 
 from easy_thumbnails.conf import Settings as defaults
 THUMBNAIL_PROCESSORS = (
